@@ -211,7 +211,7 @@ void Menu::BeginRender() noexcept
 
 		if (message.message == WM_QUIT)
 		{
-			bRunning = !bRunning;
+			Globals::bRunning = !Globals::bRunning;
 			return;
 		}
 	}
@@ -252,7 +252,7 @@ void Menu::Render() noexcept
 	ImGui::SetNextWindowSize({ WIDTH, HEIGHT });
 	ImGui::Begin(
 		"Better.Ez",
-		&bRunning,
+		&Globals::bRunning,
 		ImGuiWindowFlags_NoResize |
 		ImGuiWindowFlags_NoSavedSettings |
 		ImGuiWindowFlags_NoCollapse |
@@ -328,14 +328,16 @@ void Menu::Render() noexcept
 		if (ImGui::TreeNode("Enemy Chams"))
 		{
 			ImGui::Checkbox("Enabled", &Settings::esp.chamsEnemy);
-			ImGui::ColorPicker4("Color", Settings::esp.chamsEnemyColor);
+			ImGui::SliderFloat("Brightness", &Settings::esp.chamsEnemyBright, 0.f, 1.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
+			ImGui::ColorPicker3("Color", Settings::esp.chamsEnemyColor);
 
 			ImGui::TreePop();
 		}
 		if (ImGui::TreeNode("Team Chams"))
 		{
 			ImGui::Checkbox("Enabled", &Settings::esp.chamsTeam);
-			ImGui::ColorPicker4("Color", Settings::esp.chamsTeamColor);
+			ImGui::SliderFloat("Brightness", &Settings::esp.chamsTeamBright, 0.f, 1.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
+			ImGui::ColorPicker3("Color", Settings::esp.chamsTeamColor);
 
 			ImGui::TreePop();
 		}

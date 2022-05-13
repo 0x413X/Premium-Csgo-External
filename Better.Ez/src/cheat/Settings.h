@@ -1,5 +1,6 @@
 #pragma once
 
+
 namespace Settings {
 	inline struct Aim {
 		bool aimbotEnabled = false;
@@ -18,9 +19,11 @@ namespace Settings {
 		float glowTeamColor[4] = { 0.f, 1.f, 0.f, 1.f };
 
 		bool chamsEnemy = false;
-		float chamsEnemyColor[4] = { 1.f, 0.f, 0.f, 1.f };
+		float chamsEnemyColor[3] = { 1.f, 0.f, 0.f};
+		float chamsEnemyBright = 0.f;
 		bool chamsTeam = false;
-		float chamsTeamColor[4] = { 0.f, 1.f, 0.f, 1.f };
+		float chamsTeamColor[3] = { 0.f, 1.f, 0.f};
+		float chamsTeamBright = 0.f;
 	}esp;
 	inline struct Visuals {
 		bool noHands = false;

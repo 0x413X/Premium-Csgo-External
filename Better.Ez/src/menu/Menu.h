@@ -6,8 +6,6 @@ namespace Menu {
 	constexpr int WIDTH = 450;
 	constexpr int HEIGHT = 650;
 
-	inline bool bRunning = true;
-
 	// winapi window vars
 	inline HWND window = nullptr;
 	inline WNDCLASSEX windowClass = { };

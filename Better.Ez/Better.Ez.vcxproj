@@ -72,15 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>.\output</OutDir>
+    <IntDir>.\output\intermediates</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>.\output</OutDir>
+    <IntDir>.\output\intermediates</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>.\output</OutDir>
+    <IntDir>.\output\intermediates</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>.\output</OutDir>
+    <IntDir>.\output\intermediates</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -147,6 +155,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\sdk\Entity.cpp" />
+    <ClCompile Include="src\sdk\EntityList.cpp" />
+    <ClCompile Include="src\sdk\LocalPlayer.cpp" />
+    <ClCompile Include="src\sdk\Engine.cpp" />
+    <ClCompile Include="src\cheat\Esp.cpp" />
     <ClCompile Include="src\menu\imgui\imgui.cpp" />
     <ClCompile Include="src\menu\imgui\imgui_demo.cpp" />
     <ClCompile Include="src\menu\imgui\imgui_draw.cpp" />
@@ -158,6 +171,14 @@
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\sdk\Entity.h" />
+    <ClInclude Include="src\sdk\EntityList.h" />
+    <ClInclude Include="src\sdk\LocalPlayer.h" />
+    <ClInclude Include="src\sdk\Csgo.hpp" />
+    <ClInclude Include="src\sdk\Engine.h" />
+    <ClInclude Include="src\cheat\Esp.h" />
+    <ClInclude Include="src\util\Globals.h" />
+    <ClInclude Include="src\util\Memory.h" />
     <ClInclude Include="src\cheat\Settings.h" />
     <ClInclude Include="src\menu\imgui\imconfig.h" />
     <ClInclude Include="src\menu\imgui\imgui.h" />
