@@ -277,14 +277,6 @@ void Menu::Render() noexcept
 		//majic
 		if (ImGui::TreeNode("Aimbot"))
 		{
-			/*
-			static bool bTest = false;
-			static int iTest = 0;
-			static float fTest = 0.f;
-			ImGui::Checkbox("Enabled", &bTest);
-			ImGui::SliderInt("Integer", &iTest, 0, 90, "%d", ImGuiSliderFlags_AlwaysClamp);
-			ImGui::SliderFloat("Float", &fTest, 0.f, 90.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
-			*/
 			ImGui::Checkbox("Enabled", &Settings::aim.aimbotEnabled);
 			ImGui::SliderFloat("Fov", &Settings::aim.aimbotFov, 0.f, 90.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
 			ImGui::SliderFloat("Smoothing", &Settings::aim.aimbotSmooth, 0.f, 90.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
@@ -328,7 +320,7 @@ void Menu::Render() noexcept
 		if (ImGui::TreeNode("Enemy Chams"))
 		{
 			ImGui::Checkbox("Enabled", &Settings::esp.chamsEnemy);
-			ImGui::SliderFloat("Brightness", &Settings::esp.chamsEnemyBright, 0.f, 1.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
+			ImGui::SliderFloat("Brightness", &Settings::esp.chamsEnemyBright, 0.f, 5.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
 			ImGui::ColorPicker3("Color", Settings::esp.chamsEnemyColor);
 
 			ImGui::TreePop();
@@ -336,7 +328,7 @@ void Menu::Render() noexcept
 		if (ImGui::TreeNode("Team Chams"))
 		{
 			ImGui::Checkbox("Enabled", &Settings::esp.chamsTeam);
-			ImGui::SliderFloat("Brightness", &Settings::esp.chamsTeamBright, 0.f, 1.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
+			ImGui::SliderFloat("Brightness", &Settings::esp.chamsTeamBright, 0.f, 5.f, "%.3f", ImGuiSliderFlags_AlwaysClamp);
 			ImGui::ColorPicker3("Color", Settings::esp.chamsTeamColor);
 
 			ImGui::TreePop();

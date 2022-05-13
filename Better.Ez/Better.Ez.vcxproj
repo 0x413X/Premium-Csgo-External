@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\cheat\Misc.cpp" />
     <ClCompile Include="src\sdk\Entity.cpp" />
     <ClCompile Include="src\sdk\EntityList.cpp" />
     <ClCompile Include="src\sdk\LocalPlayer.cpp" />
@@ -169,8 +170,10 @@
     <ClCompile Include="src\menu\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\menu\Menu.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\cheat\Visuals.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\cheat\Misc.h" />
     <ClInclude Include="src\sdk\Entity.h" />
     <ClInclude Include="src\sdk\EntityList.h" />
     <ClInclude Include="src\sdk\LocalPlayer.h" />
@@ -190,6 +193,7 @@
     <ClInclude Include="src\menu\imgui\imstb_truetype.h" />
     <ClInclude Include="src\menu\Menu.h" />
     <ClInclude Include="src\Framework.h" />
+    <ClInclude Include="src\cheat\Visuals.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

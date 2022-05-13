@@ -17,6 +17,7 @@ int __stdcall wWinMain(
 	//creating cheat threads
 	std::cout << "Running Threads -> ";
 	std::thread(Esp::Run, mem).detach();
+	std::thread(Visuals::Run, mem).detach();
 	std::cout << "SUCCESS" << std::endl;
 
 	//create gui

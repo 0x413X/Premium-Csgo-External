@@ -13,12 +13,11 @@
 #include "sdk/LocalPlayer.h"
 #include "sdk/Entity.h"
 
-
 #include "cheat/Settings.h"
 //aim
 #include "cheat/Esp.h"
-//vis
-//misc
+#include "cheat/Visuals.h"
+#include "cheat/Misc.h"
 //skins?
 //entlist
 

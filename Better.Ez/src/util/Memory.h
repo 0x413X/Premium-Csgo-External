@@ -84,4 +84,5 @@ public:
 	{
 		::WriteProcessMemory(processHandle, reinterpret_cast<void*>(address), &value, sizeof(T), NULL);
 	}
+
 };

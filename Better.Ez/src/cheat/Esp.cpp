@@ -38,7 +38,15 @@ void Esp::Run(const Memory& mem)
 					}
 					if (Settings::esp.chamsTeam)
 					{
-						
+						//Model Color
+						mem.Write<BYTE>(curEnt + 0x70, BYTE((Settings::esp.chamsTeamColor[0] * 255))); //r
+						mem.Write<BYTE>(curEnt + 0x71, BYTE((Settings::esp.chamsTeamColor[1] * 255))); //g
+						mem.Write<BYTE>(curEnt + 0x72, BYTE((Settings::esp.chamsTeamColor[2] * 255))); //b
+
+						//Set model brightness
+						DWORD thisPtr = (int)(Globals::engineModule + model_ambient_min - 0x2c);
+						DWORD xored = *(DWORD*)&Settings::esp.chamsTeamBright ^ thisPtr;
+						mem.Write<int>(Globals::engineModule + model_ambient_min, xored);
 					}
 				}
 				else
@@ -55,7 +63,15 @@ void Esp::Run(const Memory& mem)
 					}
 					if (Settings::esp.chamsEnemy)
 					{
+						//Model Color
+						mem.Write<BYTE>(curEnt + 0x70, BYTE((Settings::esp.chamsEnemyColor[0] * 255))); //r
+						mem.Write<BYTE>(curEnt + 0x71, BYTE((Settings::esp.chamsEnemyColor[1] * 255))); //g
+						mem.Write<BYTE>(curEnt + 0x72, BYTE((Settings::esp.chamsEnemyColor[2] * 255))); //b
 
+						//Set model brightness
+						DWORD thisPtr = (int)(Globals::engineModule + model_ambient_min - 0x2c);
+						DWORD xored = *(DWORD*)&Settings::esp.chamsEnemyBright ^ thisPtr;
+						mem.Write<int>(Globals::engineModule + model_ambient_min, xored);
 					}
 				}
 			}
